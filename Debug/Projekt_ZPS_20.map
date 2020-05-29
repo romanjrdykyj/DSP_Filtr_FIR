@@ -1,0 +1,182 @@
+******************************************************************************
+              TMS320C55x Linker PC v4.4.1                      
+******************************************************************************
+>> Linked Thu Apr 30 12:20:30 2020
+
+OUTPUT FILE NAME:   <Projekt_ZPS_20.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0002010c
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+                        (bytes)   (bytes)    (bytes)   (bytes)
+----------------------  --------  ---------  --------  --------  ----  --------
+PAGE 0:
+  MMR                   00000000   000000c0  00000000  000000c0  RWIX
+  DARAM0                000000c0   0000ff40  00004012  0000bf2e  RWIX
+  SARAM0                00010000   00010000  00000000  00010000  RWIX
+  SARAM1                00020000   00020000  0000018d  0001fe73  RWIX
+  SARAM2                00040000   0000fe00  0000002a  0000fdd6  RWIX
+  VECS                  0004fe00   00000200  00000100  00000100  RWIX
+  PDROM                 00ff8000   00008000  00000000  00008000  R IX
+
+PAGE 2:
+  IOPORT                00000000   00020000  00000000  00020000  RWI 
+
+
+SECTION ALLOCATION MAP
+(Addresses surrounded by []'s are displayed for convenience only!)
+
+output                                                          attributes/
+section   page  orgn(bytes) orgn(words) len(bytes) len(words)   input sections
+--------  ----  ----------- ----------- ---------- ----------   --------------
+.pinit       0   [ 00040000 ]  00020000          *   00000000   UNINITIALIZED
+
+.stack       0   [ 000000c0 ]  00000060          *   00001000   UNINITIALIZED
+                 [ 000000c0 ]  00000060          *   00001000   --HOLE--
+
+.data        0   [ 000000c0 ]  00000060          *   00000000   UNINITIALIZED
+
+.sysstack 
+*            0   [ 000020c0 ]  00001060          *   00000800   UNINITIALIZED
+                 [ 000020c0 ]  00001060          *   00000800   --HOLE--
+
+.bss         0   [ 000030c0 ]  00001860          *   00000809   UNINITIALIZED
+                 [ 000030c0 ]  00001860          *   00000800   main.obj (.bss)
+                 [ 000040c0 ]  00002060          *   00000004   rts55x.lib : _lock.obj (.bss)
+                 [ 000040c8 ]  00002064          *   00000004              : exit.obj (.bss)
+                 [ 000040d0 ]  00002068          *   00000001   55xdspx_r3.lib : rand16i.obj (.bss)
+
+.text        0     00020000  [ 00010000 ] 0000018d          *   
+                   00020000  [ 00010000 ] 0000004d          *   rts55x.lib : autoinit.obj (.text)
+                   0002004d  [ 00010026+] 0000004b          *              : args_main.obj (.text)
+                   00020098  [ 0001004c ] 0000003e          *              : exit.obj (.text)
+                   000200d6  [ 0001006b ] 00000036          *   55xdspx_r3.lib : rand16.obj (.text)
+                   0002010c  [ 00010086 ] 00000034          *   rts55x.lib : boot.obj (.text)
+                   00020140  [ 000100a0 ] 00000029          *   main.obj (.text)
+                   00020169  [ 000100b4+] 00000012          *   rts55x.lib : _lock.obj (.text)
+                   0002017b  [ 000100bd+] 00000008          *   55xdspx_r3.lib : rand16i.obj (.text)
+                   00020183  [ 000100c1+] 00000007          *   rts55x.lib : exit.obj (.text:CIO_breakpoint)
+                   0002018a  [ 000100c5 ] 00000002          *              : vectors.obj (.text)
+                   0002018c  [ 000100c6 ] 00000001          *   --HOLE-- [fill = 20]
+
+.cinit       0   [ 00040000 ]  00020000          *   00000015   
+                 [ 00040000 ]  00020000          *   0000000a   rts55x.lib : _lock.obj (.cinit)
+                 [ 00040014 ]  0002000a          *   0000000a              : exit.obj (.cinit)
+                 [ 00040028 ]  00020014          *   00000001   --HOLE-- [fill = 0]
+
+vectors      0     0004fe00  [ 00027f00 ] 00000100          *   
+                   0004fe00  [ 00027f00 ] 00000100          *   rts55x.lib : vectors.obj (vectors)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+abs. value/
+byte addr   word addr   name
+---------   ---------   ----
+00000002                $TI_capability$C5500$CallingConvention
+00000002                $TI_capability$C5500$MemoryModel
+00000001                $TI_capability_requires_rev3
+ffffffff                .bss
+ffffffff                .data
+ffffffff                .text
+00020184                C$$EXIT
+0004fe00                _Reset
+            00001060    __STACK_END
+00002000                __STACK_SIZE
+00001000                __SYSSTACK_SIZE
+00000001                __TI_args_main
+ffffffff                ___binit__
+ffffffff                ___bss__
+ffffffff                ___c_args__
+            00020000    ___cinit__
+ffffffff                ___data__
+ffffffff                ___edata__
+ffffffff                ___end__
+ffffffff                ___etext__
+ffffffff                ___pinit__
+ffffffff                ___text__
+0002004d                __args_main
+            00002064    __cleanup_ptr
+            00002066    __dtors_ptr
+            00002060    __lock
+00020179                __nop
+00020171                __register_lock
+00020169                __register_unlock
+            00000060    __stack
+            00001060    __sysstack
+            00002062    __unlock
+00020183                _abort
+00020000                _auto_init
+0002010c                _c_int00
+00020098                _exit
+00020158                _main
+000200d6                _rand16
+0002017b                _rand16init
+            00001860    _samples
+00020140                _testfun
+ffffffff                binit
+            00020000    cinit
+ffffffff                edata
+ffffffff                end
+ffffffff                etext
+ffffffff                pinit
+            00002068    rndseed
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+abs. value/
+byte addr   word addr   name
+---------   ---------   ----
+00000001                $TI_capability_requires_rev3
+00000001                __TI_args_main
+00000002                $TI_capability$C5500$CallingConvention
+00000002                $TI_capability$C5500$MemoryModel
+            00000060    __stack
+00001000                __SYSSTACK_SIZE
+00002000                __STACK_SIZE
+            00001060    __STACK_END
+            00001060    __sysstack
+            00001860    _samples
+            00002060    __lock
+            00002062    __unlock
+            00002064    __cleanup_ptr
+            00002066    __dtors_ptr
+            00002068    rndseed
+00020000                _auto_init
+0002004d                __args_main
+00020098                _exit
+000200d6                _rand16
+0002010c                _c_int00
+00020140                _testfun
+00020158                _main
+00020169                __register_unlock
+00020171                __register_lock
+00020179                __nop
+0002017b                _rand16init
+00020183                _abort
+00020184                C$$EXIT
+            00020000    ___cinit__
+            00020000    cinit
+0004fe00                _Reset
+ffffffff                .bss
+ffffffff                .data
+ffffffff                .text
+ffffffff                ___binit__
+ffffffff                ___bss__
+ffffffff                ___c_args__
+ffffffff                ___data__
+ffffffff                ___edata__
+ffffffff                ___end__
+ffffffff                ___etext__
+ffffffff                ___pinit__
+ffffffff                ___text__
+ffffffff                binit
+ffffffff                edata
+ffffffff                end
+ffffffff                etext
+ffffffff                pinit
+
+[48 symbols]
